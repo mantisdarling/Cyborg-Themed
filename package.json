@@ -9,6 +9,7 @@
     "preview": "vite preview --port 5201"
   },
   "devDependencies": {
-    "vite": "^5.4.0"
+    "vite": "^5.4.0",
+    "wrangler": "^4.153.0"
   }
 }
