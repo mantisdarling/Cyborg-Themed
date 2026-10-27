@@ -1,0 +1,645 @@
+/* ==========================================================================
+   TECHFEST IIT BOMBAY CYBORG MANGA LANDING PAGE (ROBOTIC FLUID EDITION)
+   Interactive Ferrofluid Hydraulic Canvas, High Energy Manga Animations.
+   Zero Slashes. Zero Dashes in Visible Content. Pure Verified Telemetry.
+   ========================================================================== */
+
+:root {
+  --inkBlack: #000000;
+  --paperWhite: #ffffff;
+  --panelSurface: rgba(9, 9, 9, 0.92);
+  --textDim: #888888;
+  
+  --fontManga: 'Dela Gothic One', cursive, sans-serif;
+  --fontBody: 'Space Grotesk', sans-serif;
+  --fontMono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--inkBlack);
+  color: var(--paperWhite);
+  font-family: var(--fontBody);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fullscreen Robotic Fluid Background Canvas */
+#roboticFluidCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+/* Halftone Screentone Grid */
+.screentoneOverlay {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(var(--paperWhite) 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.landingWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   MASTHEAD: ANIMATED TECHFEST EMBLEM & MANGA HUD
+   -------------------------------------------------------------------------- */
+.mangaMasthead {
+  border-bottom: 3px solid var(--paperWhite);
+  padding: 0.85rem 0;
+  background-color: rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.mastheadInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brandCluster {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  text-decoration: none;
+  color: var(--paperWhite);
+}
+
+/* Animated Official Techfest TF Monogram Logo */
+.tfLogoBox {
+  width: 48px;
+  height: 48px;
+  background-color: var(--paperWhite);
+  color: var(--inkBlack);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 3px solid var(--paperWhite);
+  transform: skewX(-8deg);
+  box-shadow: 4px 4px 0px #333333;
+  animation: logoFloat 3.5s ease-in-out infinite;
+}
+
+.tfMonogramSvg {
+  width: 34px;
+  height: 34px;
+}
+
+@keyframes logoFloat {
+  0% { transform: skewX(-8deg) translateY(0px); box-shadow: 4px 4px 0px #333333; }
+  50% { transform: skewX(-8deg) translateY(-4px); box-shadow: 6px 6px 0px var(--paperWhite); }
+  100% { transform: skewX(-8deg) translateY(0px); box-shadow: 4px 4px 0px #333333; }
+}
+
+.tfPathAnimated {
+  stroke-dasharray: 80;
+  animation: strokeDraw 3s linear infinite;
+}
+
+@keyframes strokeDraw {
+  0% { stroke-dashoffset: 160; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.brandTextGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandHeading {
+  font-family: var(--fontManga);
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.brandSubheading {
+  font-family: var(--fontMono);
+  font-size: 0.65rem;
+  color: var(--textDim);
+  letter-spacing: 0.12em;
+}
+
+.headerMetaStrip {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: var(--fontMono);
+  font-size: 0.72rem;
+}
+
+.metaItem {
+  color: #cccccc;
+  text-transform: uppercase;
+}
+
+.statusIndicator {
+  background-color: var(--paperWhite);
+  color: var(--inkBlack);
+  font-family: var(--fontManga);
+  font-size: 0.7rem;
+  padding: 0.25rem 0.65rem;
+  transform: skewX(-8deg);
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+/* --------------------------------------------------------------------------
+   HERO: CONCISE MANGA CYBORG COCKPIT VIEWPORT
+   -------------------------------------------------------------------------- */
+.heroViewport {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 2.5rem 0;
+}
+
+.heroContentGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+.heroLeftColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.editionPill {
+  display: inline-block;
+  background-color: var(--paperWhite);
+  color: var(--inkBlack);
+  font-family: var(--fontManga);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1.25rem;
+  transform: skewX(-8deg);
+  border: 2px solid var(--paperWhite);
+  width: fit-content;
+}
+
+.mangaMainTitle {
+  font-family: var(--fontManga);
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.mangaMainTitle span.inverseBlock {
+  background-color: var(--paperWhite);
+  color: var(--inkBlack);
+  padding: 0 0.4rem;
+  display: inline-block;
+}
+
+.scientificAbstract {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 1.75rem;
+  max-width: 580px;
+}
+
+/* Telemetry Strip */
+.telemetryGridStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  border-top: 1px dotted #555555;
+  border-bottom: 1px dotted #555555;
+  padding: 1.15rem 0;
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.telemetryCell {
+  border-right: 1px dotted #444444;
+  padding-right: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.telemetryCell:hover {
+  transform: translateY(-2px);
+}
+
+.telemetryCell:last-child {
+  border-right: none;
+}
+
+.telemetryFigure {
+  font-family: var(--fontManga);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.telemetryCaption {
+  font-family: var(--fontMono);
+  font-size: 0.65rem;
+  color: var(--textDim);
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+  letter-spacing: 0.08em;
+}
+
+.buttonClusterRow {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.primaryActionButton {
+  background-color: var(--paperWhite);
+  color: var(--inkBlack);
+  font-family: var(--fontManga);
+  font-size: 0.88rem;
+  padding: 0.8rem 1.85rem;
+  border: 3px solid var(--paperWhite);
+  text-decoration: none;
+  transform: skewX(-8deg);
+  box-shadow: 6px 6px 0px #333333;
+  transition: all 0.15s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.primaryActionButton:hover {
+  transform: skewX(-8deg) translate(-2px, -2px);
+  box-shadow: 8px 8px 0px var(--paperWhite);
+}
+
+.secondaryActionButton {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--paperWhite);
+  font-family: var(--fontManga);
+  font-size: 0.88rem;
+  padding: 0.8rem 1.75rem;
+  border: 3px solid var(--paperWhite);
+  text-decoration: none;
+  transform: skewX(-8deg);
+  box-shadow: 6px 6px 0px #222222;
+  transition: all 0.15s ease;
+  display: inline-block;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.secondaryActionButton:hover {
+  background-color: var(--paperWhite);
+  color: var(--inkBlack);
+  transform: skewX(-8deg) translate(-2px, -2px);
+  box-shadow: 8px 8px 0px var(--paperWhite);
+}
+
+/* --------------------------------------------------------------------------
+   INTERACTIVE CYBORG DIAGNOSTIC CONSOLE (RIGHT HERO)
+   -------------------------------------------------------------------------- */
+.diagnosticConsole {
+  background-color: var(--panelSurface);
+  border: 3px solid var(--paperWhite);
+  padding: 1.6rem;
+  box-shadow: 10px 10px 0px #333333;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.diagnosticConsole::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--paperWhite) 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Interactive Manga Sound Effect Badge */
+.mangaSoundBadge {
+  position: absolute;
+  top: -18px;
+  right: -14px;
+  font-family: var(--fontManga);
+  font-size: 1.75rem;
+  background-color: var(--paperWhite);
+  color: var(--inkBlack);
+  padding: 0.1rem 0.75rem;
+  border: 3px solid var(--inkBlack);
+  box-shadow: 4px 4px 0px var(--paperWhite);
+  transform: rotate(6deg);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+  animation: badgeWiggle 4s ease-in-out infinite;
+}
+
+@keyframes badgeWiggle {
+  0%, 90%, 100% { transform: rotate(6deg); }
+  93% { transform: rotate(12deg) scale(1.08); }
+  96% { transform: rotate(2deg) scale(0.98); }
+}
+
+.mangaSoundBadge:hover {
+  transform: rotate(10deg) scale(1.15) !important;
+}
+
+.mangaSoundBadge:active {
+  transform: rotate(2deg) scale(0.95) !important;
+}
+
+.consoleHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dotted #555555;
+  padding-bottom: 0.5rem;
+  font-family: var(--fontMono);
+  font-size: 0.7rem;
+  color: #aaaaaa;
+}
+
+.liveCoordinateClock {
+  color: var(--paperWhite);
+  font-weight: 700;
+}
+
+/* Mode Selectors */
+.diagnosticModesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+.modeSelectBtn {
+  background-color: #000000;
+  border: 1px solid #444444;
+  color: #aaaaaa;
+  font-family: var(--fontMono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.45rem 0.2rem;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+
+.modeSelectBtn:hover {
+  border-color: var(--paperWhite);
+  color: var(--paperWhite);
+  transform: translateY(-1px);
+}
+
+.modeSelectBtn.active {
+  background-color: var(--paperWhite);
+  color: var(--inkBlack);
+  border-color: var(--paperWhite);
+  font-weight: 700;
+  box-shadow: 2px 2px 0px #444444;
+}
+
+/* Anatomical Stage with Live Scanning Laser Line */
+.schematicCanvasStage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 330px;
+  background-color: #000000;
+  border: 1px solid #222222;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Vertical Laser Scanner Line */
+.laserScannerBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--paperWhite);
+  box-shadow: 0 0 8px #ffffff;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 5;
+  animation: scanSweep 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes scanSweep {
+  0% { top: 4%; opacity: 0.3; }
+  50% { opacity: 0.85; }
+  100% { top: 96%; opacity: 0.3; }
+}
+
+/* Rotating Targeting Crosshair Reticle */
+.targetReticleRing {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotateReticle 16s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rotateReticle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.schematicVectorSvg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Live Oscilloscope Waveform Canvas */
+.oscilloscopeStrip {
+  width: 100%;
+  height: 36px;
+  background-color: #000000;
+  border-top: 1px dotted #444444;
+  border-bottom: 1px dotted #444444;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#nervePulseCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Real Telemetry Grid */
+.telemetryGridRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.telemetryBox {
+  border: 1px solid #333333;
+  background-color: #000000;
+  padding: 0.45rem 0.65rem;
+  transition: all 0.15s ease;
+}
+
+.telemetryBox:hover {
+  border-color: var(--paperWhite);
+}
+
+.telemetryBoxLabel {
+  font-family: var(--fontMono);
+  font-size: 0.6rem;
+  color: #888888;
+  text-transform: uppercase;
+}
+
+.telemetryBoxVal {
+  font-family: var(--fontManga);
+  font-size: 1.05rem;
+  color: var(--paperWhite);
+  margin-top: 0.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   CONCISE BOTTOM STATUS BAR
+   -------------------------------------------------------------------------- */
+.conciseBottomBar {
+  border-top: 3px solid var(--paperWhite);
+  padding: 0.75rem 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  font-family: var(--fontMono);
+  font-size: 0.72rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bottomContentRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bottomLeftCluster {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.bottomEmblem {
+  width: 22px;
+  height: 22px;
+  animation: emblemSpin 20s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes emblemSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bottomNavLinks {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.bottomNavLinks a {
+  color: #aaaaaa;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.15s;
+}
+
+.bottomNavLinks a:hover {
+  color: var(--paperWhite);
+}
+
+.systemStatusNotice {
+  color: #777777;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .heroContentGrid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerMetaStrip {
+    display: none;
+  }
+  .telemetryGridStrip {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  .telemetryCell {
+    border-right: none;
+    border-bottom: 1px dotted #444444;
+    padding-bottom: 0.65rem;
+  }
+  .telemetryCell:last-child {
+    border-bottom: none;
+  }
+  .diagnosticModesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bottomContentRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

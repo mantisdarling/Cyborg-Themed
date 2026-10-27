@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHFEST IIT BOMBAY CYBORG EXHIBITION</title>
+
+  <!-- Google Fonts: Dela Gothic One, Space Grotesk, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Interactive Robotic Ferrofluid Canvas -->
+  <canvas id="roboticFluidCanvas"></canvas>
+
+  <!-- Discrete Screentone Overlay -->
+  <div class="screentoneOverlay"></div>
+
+  <!-- Concise Landing Page Frame -->
+  <div class="landingWrapper">
+
+    <!-- Top Manga Masthead -->
+    <header class="mangaMasthead">
+      <div class="mastheadInner">
+        <a href="#" class="brandCluster">
+          <!-- Animated Techfest TF Monogram Logo -->
+          <div class="tfLogoBox">
+            <svg class="tfMonogramSvg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Stylized Techfest TF Monogram Path with Continuous Vector Animation -->
+              <path class="tfPathAnimated" d="M 18 20 L 82 20 L 82 34 L 56 34 L 56 84 L 42 84 L 42 34 L 18 34 Z" fill="#000000" stroke="#000000" stroke-width="4" stroke-linejoin="miter" />
+              <!-- F Arm Connection -->
+              <path class="tfPathAnimated" d="M 56 46 L 76 46 L 76 58 L 56 58 Z" fill="#000000" stroke="#000000" stroke-width="3" stroke-linejoin="miter" />
+            </svg>
+          </div>
+
+          <div class="brandTextGroup">
+            <span class="brandHeading">TECHFEST IIT BOMBAY</span>
+            <span class="brandSubheading">DEPARTMENT OF CYBERNETICS AND BIOMECHATRONICS</span>
+          </div>
+        </a>
+
+        <div class="headerMetaStrip">
+          <div class="metaItem">EDITION 2026 ARCHIVE</div>
+          <div class="metaItem">OMEGA CLEARANCE</div>
+          <div class="statusIndicator">SYSTEM ACTIVE</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Concise Hero Viewport -->
+    <main class="heroViewport" id="hero">
+      <div class="heroContentGrid">
+
+        <!-- Left Column: Real Cybernetics Theory and Heavy Typography -->
+        <div class="heroLeftColumn">
+          <div class="editionPill">CLASSIFIED CYBORG DOSSIER</div>
+
+          <h1 class="mangaMainTitle">
+            HOMO <br>
+            <span class="inverseBlock">SYNTHETICUS</span>
+          </h1>
+
+          <p class="scientificAbstract">
+            Derived from the cybernetic foundation of Norbert Wiener and the 1960 cyborg concept of Manfred Clynes. Integrating artificial electromechanical subsystems with biological neural feedback loops to regulate physiological homeostasis and motor intention.
+          </p>
+
+          <!-- Verified Real Telemetry Strip -->
+          <div class="telemetryGridStrip">
+            <div class="telemetryCell">
+              <div class="telemetryFigure">0.38 MS</div>
+              <div class="telemetryCaption">Neural Bus Latency</div>
+            </div>
+            <div class="telemetryCell">
+              <div class="telemetryFigure">1024 CH</div>
+              <div class="telemetryCaption">Intracortical Array</div>
+            </div>
+            <div class="telemetryCell">
+              <div class="telemetryFigure">85.0 NM</div>
+              <div class="telemetryCaption">Actuator Joint Torque</div>
+            </div>
+          </div>
+
+          <div class="buttonClusterRow">
+            <a href="#diagnostic" class="primaryActionButton">Calibrate Chassis</a>
+            <a href="#diagnostic" class="secondaryActionButton">Inspect Telemetry</a>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Diagnostic Console with Animations -->
+        <div class="diagnosticConsole" id="diagnostic">
+          <!-- Manga Spring Bounce Sound Badge -->
+          <div class="mangaSoundBadge" id="soundBadge" title="Click for mechanical sound">CLANG</div>
+
+          <div class="consoleHeaderRow">
+            <span id="diagNameText">TITANIUM SKELETON</span>
+            <span id="coordinateClock" class="liveCoordinateClock">ROTATION 142.4 DEG • SYNC 99.8 PERCENT</span>
+          </div>
+
+          <!-- 4 Mode Diagnostic Switcher -->
+          <div class="diagnosticModesGrid">
+            <button class="modeSelectBtn active" data-mode="skeleton">Skeleton</button>
+            <button class="modeSelectBtn" data-mode="musculature">Myofiber</button>
+            <button class="modeSelectBtn" data-mode="neural">Neural Bus</button>
+            <button class="modeSelectBtn" data-mode="dermal">Dermal</button>
+          </div>
+
+          <!-- Dynamic SVG Vector Stage in White Ink with Laser Scanner & Reticle -->
+          <div class="schematicCanvasStage">
+            <!-- Animated Vertical Laser Scanner Sweep -->
+            <div class="laserScannerBar"></div>
+            <!-- Animated Rotating Reticle -->
+            <div class="targetReticleRing"></div>
+
+            <svg class="schematicVectorSvg" id="schematicViewport" viewBox="0 0 340 380">
+              <!-- Dynamically populated by main.js -->
+            </svg>
+          </div>
+
+          <!-- Live Oscilloscope Nerve Pulse Stream Canvas -->
+          <div class="oscilloscopeStrip">
+            <canvas id="nervePulseCanvas"></canvas>
+          </div>
+
+          <!-- Real World Telemetry Grid -->
+          <div class="telemetryGridRow" id="telemetryReadout">
+            <!-- Dynamically populated by main.js -->
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Concise Bottom Status Bar (No Giant Footer) -->
+    <footer class="conciseBottomBar">
+      <div class="bottomContentRow">
+        <div class="bottomLeftCluster">
+          <!-- Small Moving TF Insignia -->
+          <svg class="bottomEmblem" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" stroke="#FFFFFF" stroke-width="6" fill="#000000" />
+            <circle cx="50" cy="50" r="10" fill="#FFFFFF" />
+          </svg>
+          <div>TECHFEST IIT BOMBAY 2026 CYBERNETICS EXHIBITION</div>
+        </div>
+
+        <div class="bottomNavLinks">
+          <a href="#hero">Overview</a>
+          <a href="#diagnostic">Diagnostic</a>
+          <a href="#diagnostic">Telemetry</a>
+        </div>
+
+        <div class="systemStatusNotice">ALL CHASSIS TELEMETRY NOMINAL</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
